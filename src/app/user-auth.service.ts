@@ -10,6 +10,7 @@ import { UserDetails } from './user-details.model';
 @Injectable()
 export class UserAuthService {
   user: Observable<firebase.User>;
+  createUserError: string;
 
   constructor(public afAuth: AngularFireAuth) {
     this.user = afAuth.authState;
@@ -41,11 +42,19 @@ export class UserAuthService {
       })
       .then(() => firebase.auth().signOut())
       .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
-      .catch(function(error) {
-        let errorCode = error;
-        let errorMessage = error.message;
+      .catch((error) => {
+        console.log(error.message);
+        this.createUserError = error.message;
+        console.log(this.createUserError);
+        // let errorCode = error;
+        // let errorMessage = error.message;
       });
 
+  }
+
+
+  error(){
+    return this.createUserError;
   }
 
   signIn(

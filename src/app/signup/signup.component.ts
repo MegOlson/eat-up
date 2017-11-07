@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
   user: Observable<firebase.User>;
   emailError: string;
   passwordError: string;
+  userError: string;
 
   constructor(
     public authService: UserAuthService,
@@ -29,6 +30,7 @@ export class SignupComponent implements OnInit {
     public router: Router
   ) {
     this.user = afAuth.authState;
+
   }
 
   ngOnInit() {}
@@ -43,7 +45,7 @@ export class SignupComponent implements OnInit {
     if(!this.checkEmail(email)){
       this.emailError = "Invalid Email!"
     } else if (!this.checkPassword(password, confirmPassword)){
-      this.passwordError = "Password do not match!"
+      this.passwordError = "Passwords do not match!"
     }  else {
       this.authService.createUser(email, password, firstName, lastName);
     }
@@ -65,6 +67,14 @@ export class SignupComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  anyError(){
+    if(this.authService.createUserError){
+      this.userError = this.authService.createUserError;
+      return true;
+    }
+    return false;
   }
 
 }

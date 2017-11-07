@@ -6,6 +6,9 @@
   <input type="text" class="form-control" #newLastName required>
 
   <div *ngIf = "emailError">{{emailError}}</div>
+
+  <div *ngIf="anyError()">{{userError}}</div>
+
   <label for="email">Email:</label>
   <input type="email" class="form-control" #newEmail required>
 
