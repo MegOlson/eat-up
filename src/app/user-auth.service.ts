@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from "rxjs/Observable";
 import { AngularFireAuth } from "angularfire2/auth";
@@ -12,7 +13,7 @@ export class UserAuthService {
   user: Observable<firebase.User>;
   createUserError: string;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
   }
 
@@ -41,20 +42,11 @@ export class UserAuthService {
         });
       })
       .then(() => firebase.auth().signOut())
-      .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
+      // .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
       .catch((error) => {
-        console.log(error.message);
         this.createUserError = error.message;
-        console.log(this.createUserError);
-        // let errorCode = error;
-        // let errorMessage = error.message;
       });
 
-  }
-
-
-  error(){
-    return this.createUserError;
   }
 
   signIn(
@@ -62,9 +54,11 @@ export class UserAuthService {
     password: string
   ) {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch(function(error) {
-      let errorCode = error;
-      let errorMessage = error.message;
+    .then((respond) => {
+      this.router.navigate([""]);
+    })
+    .catch((error) => {
+      this.createUserError = error.message;
     });
    }
 

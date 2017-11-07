@@ -48,6 +48,7 @@ export class SignupComponent implements OnInit {
       this.passwordError = "Passwords do not match!"
     }  else {
       this.authService.createUser(email, password, firstName, lastName);
+      this.router.navigate([""]);
     }
   }
 

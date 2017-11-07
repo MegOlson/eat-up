@@ -13,6 +13,7 @@ import { AngularFireAuth } from "angularfire2/auth";
   providers: [UserAuthService, AngularFireAuth]
 })
 export class LoginComponent implements OnInit {
+  loginError: string;
 
   constructor(private authService: UserAuthService, private router: Router) { }
 
@@ -24,7 +25,6 @@ export class LoginComponent implements OnInit {
     password: string
   ) {
     this.authService.signIn(email, password);
-    this.router.navigate([""]);
    }
 
    googleLogIn() {
@@ -36,5 +36,15 @@ export class LoginComponent implements OnInit {
     this.authService.logout();
     this.router.navigate([""]);
   }
+
+  anyError(){
+    if(this.authService.createUserError){
+      this.loginError = this.authService.createUserError;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 
 }
