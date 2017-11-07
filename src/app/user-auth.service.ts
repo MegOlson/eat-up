@@ -59,4 +59,7 @@ export class UserAuthService {
     });
    }
 
+   googleSignIn() {
+       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+     }
 }
