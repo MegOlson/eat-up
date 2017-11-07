@@ -4,16 +4,18 @@
       <a class="navbar-brand" routerLink="">Eat Up</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="signup">New Account</a></li>
-      <li><a routerLink="login">Sign In</a></li>
-      <li><a routerLink="results">Results</a></li>
-      <li><a routerLink="edit-profile">Edit Profile</a></li>
-      <li><a routerLink="dashboard">Dashboard</a></li>
-      <li><a routerLink="search">Search</a></li>
-      <li><a (click)="logout()">Log out</a></li>
-      <li *ngIf="isLoggedIn">
-        <a>{{userName}}</a>
-      </li>
+      <div *ngIf ="!isLoggedIn">
+        <li><a routerLink="signup">New Account</a></li>
+        <li><a routerLink="login">Sign In</a></li>
+      </div>
+      <div  *ngIf="isLoggedIn">
+        <li><a routerLink="results">Results</a></li>
+        <li><a routerLink="edit-profile">Edit Profile</a></li>
+        <li><a routerLink="dashboard">Dashboard</a></li>
+        <li><a routerLink="search">Search</a></li>
+        <li><a (click)="logout()">Log out</a></li>
+        <li><a>{{userName}}</a></li>
+      </div>
     </ul>
   </div>
 </nav>

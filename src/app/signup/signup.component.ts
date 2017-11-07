@@ -18,6 +18,7 @@ import { UserAuthService } from '../user-auth.service';
 
 export class SignupComponent implements OnInit {
   user: Observable<firebase.User>;
+  error: string;
   constructor(
     public authService: UserAuthService,
     private route: ActivatedRoute,
@@ -36,6 +37,21 @@ export class SignupComponent implements OnInit {
     email: string,
     password: string
   ) {
-    this.authService.createUser(email, password, firstName, lastName);
+    if(this.checkEmail(email)){
+      this.authService.createUser(email, password, firstName, lastName);
+    } else {
+      this.error = "Invalid Email"
+    }
   }
+
+  checkEmail(
+    email: string,
+  ) {
+    if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+      return true;
+    } else {
+      return false;
+    }
+   }
+
 }
