@@ -18,7 +18,9 @@ import { UserAuthService } from '../user-auth.service';
 
 export class SignupComponent implements OnInit {
   user: Observable<firebase.User>;
-  error: string;
+  emailError: string;
+  passwordError: string;
+
   constructor(
     public authService: UserAuthService,
     private route: ActivatedRoute,
@@ -35,12 +37,15 @@ export class SignupComponent implements OnInit {
     firstName: string,
     lastName: string,
     email: string,
-    password: string
+    password: string,
+    confirmPassword: string
   ) {
-    if(this.checkEmail(email)){
+    if(!this.checkEmail(email)){
+      this.emailError = "Invalid Email!"
+    } else if (!this.checkPassword(password, confirmPassword)){
+      this.passwordError = "Password do not match!"
+    }  else {
       this.authService.createUser(email, password, firstName, lastName);
-    } else {
-      this.error = "Invalid Email"
     }
   }
 
@@ -53,5 +58,13 @@ export class SignupComponent implements OnInit {
       return false;
     }
    }
+
+  checkPassword(password: string, confirmPassword: string){
+    if(password === confirmPassword){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }
