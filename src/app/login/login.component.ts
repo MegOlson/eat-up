@@ -14,7 +14,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authService: UserAuthService,) { }
+  constructor(private authService: UserAuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,6 +24,11 @@ export class LoginComponent implements OnInit {
     password: string
   ) {
     this.authService.signIn(email, password);
+    this.router.navigate([""]);
    }
+
+  logout() {
+    this.authService.logout();
+  }
 
 }

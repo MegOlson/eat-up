@@ -10,6 +10,10 @@
       <li><a routerLink="edit-profile">Edit Profile</a></li>
       <li><a routerLink="dashboard">Dashboard</a></li>
       <li><a routerLink="search">Search</a></li>
+      <li><a (click)="logout()">Log out</a></li>
+      <li *ngIf="isLoggedIn">
+        <a>{{userName}}</a>
+      </li>
     </ul>
   </div>
 </nav>
