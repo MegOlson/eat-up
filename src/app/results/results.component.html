@@ -12,5 +12,9 @@
 <ol>
 <div *ngFor="let restaurant of childRestaurants">
     <li>{{restaurant.name}}</li>
+    <div *ngIf="restaurant.opening_hours.open_now; else elseBlock">
+      <p>Open Now</p>
+    </div>
+    <ng-template #elseBlock><p>Closed</p></ng-template>
 </div>
 </ol>
