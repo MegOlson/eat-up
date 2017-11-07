@@ -1,3 +1,15 @@
 .sebm-google-map-container {
   height: 300px;
 }
+
+.name {
+  font-weight: bold;
+}
+
+.open {
+  color: green;
+}
+
+.closed {
+  color: red;
+}
