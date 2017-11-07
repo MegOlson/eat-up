@@ -15,7 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 export const firebaseConfig = {
@@ -24,6 +24,10 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
+
+const googleMapsCore = AgmCoreModule.forRoot({
+  apiKey : 'AIzaSyDGSdrAlnmRxGQwhSe5y3oxUp5lxQr2s_I',
+});
 
 @NgModule({
   declarations: [
@@ -43,6 +47,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     routing,
+    googleMapsCore,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDGSdrAlnmRxGQwhSe5y3oxUp5lxQr2s_I'
     }),

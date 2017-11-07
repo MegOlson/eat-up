@@ -1,13 +1,13 @@
 <h1>Restaurants:</h1>
-<agm-map style="height: 300px" [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
+<sebm-google-map [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
   <div *ngFor="let restaurant of childRestaurants">
-    <agm-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
-      <agm-snazzy-info-window [maxWidth]="50" [closeWhenOthersOpen]="true">
+    <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
+      <sebm-google-map-info-window>
         {{restaurant.name}}
-      </agm-snazzy-info-window>
-    </agm-marker>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
   </div>
-</agm-map>
+</sebm-google-map>
 
 <ol>
 <div *ngFor="let restaurant of childRestaurants">
