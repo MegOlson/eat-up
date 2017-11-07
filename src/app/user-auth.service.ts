@@ -47,4 +47,15 @@ export class UserAuthService {
       });
 
   }
+
+  signIn(
+    email: string,
+    password: string
+  ) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      let errorCode = error;
+      let errorMessage = error.message;
+    });
+   }
 }

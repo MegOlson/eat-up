@@ -1,1 +1,8 @@
 <h1>Login Component</h1>
+<form>
+  <label for="email">Email:</label>
+  <input type="text" name="email" #inputEmail>
+  <label for="password">Password:</label>
+  <input type="text" name="password" #inputPassword>
+  <button type="button" name="button" class="btn" (click)="logIn(inputEmail.value,inputPassword.value);inputEmail.value='';inputPassword.value='';">Eat Up</button>
+</form>
