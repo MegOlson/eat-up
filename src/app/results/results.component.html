@@ -1,1 +1,16 @@
-<h1>Results Component</h1>
+<h1>Restaurants:</h1>
+<agm-map style="height: 300px" [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
+  <div *ngFor="let restaurant of childRestaurants">
+    <agm-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
+      <agm-snazzy-info-window [maxWidth]="50" [closeWhenOthersOpen]="true">
+        {{restaurant.name}}
+      </agm-snazzy-info-window>
+    </agm-marker>
+  </div>
+</agm-map>
+
+<ol>
+<div *ngFor="let restaurant of childRestaurants">
+    <li>{{restaurant.name}}</li>
+</div>
+</ol>
