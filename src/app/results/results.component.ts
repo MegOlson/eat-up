@@ -11,6 +11,9 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class ResultsComponent {
   @Input() childRestaurants;
+
+  zoom: number = 12;
+
   constructor() { }
 
 }
