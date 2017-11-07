@@ -36,6 +36,10 @@ const appRoutes: Routes = [
   {
     path: 'edit-profile',
     component: EditProfileComponent
+  },
+  {
+    path: 'login/signup',
+    component: SignupComponent
   }
 ];
 
