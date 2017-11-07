@@ -61,9 +61,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Copyright (c) 2017 **Megan Olson, Kristen Kulha, Elrey Belmonti, Linda Luu**
 
 <img src="https://avatars.githubusercontent.com/MegOlson?s=100" width="100" alt="Megan Olson" /><br />[<sub>Megan Olson</sub>](https://github.com/MegOlson)<br />[💻](https://github.com/eat-up/commits?author=MegOlson) [📖](https://github.com/eat-up/commits?author=MegOlson) [⚠️](https://github.com/eat-up/commits?author=MegOlson) 🎨
-
 <img src="https://avatars.githubusercontent.com/kristenmarie?s=100" width="100" alt="Kristen Marie" /><br />[<sub>Kristen Marie Kulha</sub>](https://github.com/kristenmarie)<br />[💻](https://github.com/eat-up/commits?author=kristenmarie) [📖](https://github.com/eat-up/commits?author=kristenmarie) [⚠️](https://github.com/eat-up/commits?author=kristenmarie) 🎨
-
 <img src="https://avatars.githubusercontent.com/ElreyB?s=100" width="100" alt="Elrey Belmonti" /><br />[<sub>Elrey Belmonti</sub>](https://github.com/ElreyB)<br />[💻](https://github.com/ElreyB/eat-up/commits?author=ElreyB) [📖](https://github.com/ElreyB/eat-up/commits?author=ElreyB) [⚠️](https://github.com/ElreyB/eat-up/commits?author=ElreyB) 🎨
-
 <img src="https://avatars.githubusercontent.com/tocodenow?s=100" width="100" alt="Linda Luu" /><br />[<sub>Linda Luu</sub>](https://github.com/tocodenow)<br />[💻](https://github.com/eat-up/commits?author=tocodenow) [📖](https://github.com/eat-up/commits?author=tocodenow) [⚠️](https://github.com/eat-up/commits?author=tocodenow) 🎨
