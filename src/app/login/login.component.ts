@@ -8,7 +8,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UserAuthService]
 })
 export class LoginComponent implements OnInit {
 

@@ -1,1 +1,16 @@
-<h1>SignUp Component</h1>
+<form>
+  <label for="email">First Name:</label>
+  <input type="text" class="form-control" #newFirstName required>
+
+  <label for="email">Last Name:</label>
+  <input type="text" class="form-control" #newLastName required>
+
+  <label for="email">Email:</label>
+  <input type="text" class="form-control" #newEmail required>
+
+  <label for="password">Password:</label>
+  <input type="text" class="form-control" #newPassword required>
+
+  <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value='';"
+    type="button" name="button">Submit</button>
+</form>
