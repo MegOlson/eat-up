@@ -1,1 +1,21 @@
-<h1>Results Component</h1>
+<h1>Restaurants:</h1>
+<sebm-google-map [zoom]="zoom" [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
+  <div *ngFor="let restaurant of childRestaurants">
+    <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
+      <sebm-google-map-info-window>
+        {{restaurant.name}}
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+  </div>
+</sebm-google-map>
+
+<ol>
+<div *ngFor="let restaurant of childRestaurants">
+    <li><p class="name">{{restaurant.name}}</p></li>
+    <p>{{restaurant.formatted_address}}</p>
+    <div *ngIf="restaurant.opening_hours.open_now; else elseBlock">
+      <p class="open">Open Now</p>
+    </div>
+    <ng-template #elseBlock><p class="closed">Closed</p></ng-template>
+</div>
+</ol>

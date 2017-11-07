@@ -26,10 +26,6 @@ const appRoutes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'results',
-    component: ResultsComponent
-  },
-  {
     path: 'dashboard',
     component: DashboardComponent
   },

@@ -8,6 +8,7 @@
 # dependencies
 /node_modules
 /bower_components
+.env
 
 # IDEs and editors
 /.idea
@@ -19,7 +20,7 @@
 *.sublime-workspace
 
 #Firebase credentials
-/src/app/api-keys.ts 
+/src/app/api-keys.ts
 
 # IDE - VSCode
 .vscode/*
