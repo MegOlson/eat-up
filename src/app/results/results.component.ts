@@ -21,7 +21,6 @@ export class ResultsComponent {
     this.users = this.userAuthService.getUsers();
     this.users.subscribe(data => {
       this.subUsers = data;
-      console.log("subUsers", this.subUsers)
     })
   }
 

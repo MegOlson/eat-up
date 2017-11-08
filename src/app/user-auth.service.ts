@@ -43,7 +43,6 @@ export class UserAuthService {
   }
 
   getUserEmail(){
-    console.log(firebase.auth().currentUser.email);
     return firebase.auth().currentUser.email;
   }
 
@@ -58,8 +57,6 @@ export class UserAuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((respond) => {
         let user = firebase.auth().currentUser;
-        console.log(user, "HELLO");
-        console.log(this.userDetailList, "hello");
          user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: ""
