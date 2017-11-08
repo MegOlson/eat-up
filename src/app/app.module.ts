@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { UserPipe } from './user.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -38,7 +39,8 @@ const googleMapsCore = AgmCoreModule.forRoot({
     SearchComponent,
     ResultsComponent,
     DashboardComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    UserPipe
   ],
   imports: [
     BrowserModule,
