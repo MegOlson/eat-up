@@ -1,0 +1,18 @@
+{ "users": [{
+    "email": "meganannetteolson@gmail.com",
+    "favorites": ["Pho Ever"],
+    "image": ""
+    }, {
+    "email": "kristen.m.kulha@gmail.com",
+    "favorites": ["Pho Ever"],
+    "image": ""
+      }, {
+    "email": "starchi122@gmail.com",
+    "favorites": ["Pho Ever"],
+    "image": ""
+  }, {
+    "email": "linda.luu1226@gmail.com",
+    "favorites": ["Pho Ever"],
+    "image": ""
+  }]
+}

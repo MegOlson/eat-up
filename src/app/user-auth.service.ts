@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from "rxjs/Observable";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase/app";
-
 import { UserDetails } from './user-details.model';
-
 
 @Injectable()
 export class UserAuthService {
   user: Observable<firebase.User>;
-  userDetailList: FirebaseListObservable<any[]>;
-  createUserError: string;
+  users: FirebaseListObservable<any[]>;
+  currentUser;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase) {
+  constructor(public afAuth: AngularFireAuth, private database: AngularFireDatabase) {
     this.user = afAuth.authState;
-    this.userDetailList = database.list("users");
+    this.users = database.list('users');
   }
+
+  getUsers() {
+    return this.users;
+  }
+
+  // firebase.auth().currentUser.email
+  // this.database.object(users/0)
+  addToFavoritesList(chosenRestaurant) {
+    console.log(this.users);
+  }
+
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
@@ -33,31 +41,23 @@ export class UserAuthService {
     firstName: string,
     lastName: string
   ) {
-      firebase
+    return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((respond) => {
+      .then(function(respond) {
         let user = firebase.auth().currentUser;
-        console.log(user, "HELLO");
-        console.log(this.userDetailList, "hello");
-         user.updateProfile({
+        return user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: ""
         });
-        let newUser: UserDetails = new UserDetails(email);
-        newUser.userId = user.uid;
-        this.addUser(newUser);
-
       })
       .then(() => firebase.auth().signOut())
-      .catch((error) => {
-        this.createUserError = error.message;
+      .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
+      .catch(function(error) {
+        let errorCode = error;
+        let errorMessage = error.message;
       });
 
-  }
-
-  addUser(newUserDetails: UserDetails) {
-    this.userDetailList.push(newUserDetails);
   }
 
   signIn(
@@ -65,15 +65,15 @@ export class UserAuthService {
     password: string
   ) {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((respond) => {
-      this.router.navigate([""]);
-    })
-    .catch((error) => {
-      this.createUserError = error.message;
+    .catch(function(error) {
+      let errorCode = error;
+      let errorMessage = error.message;
     });
    }
 
    googleSignIn() {
        this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
      }
+
+
 }

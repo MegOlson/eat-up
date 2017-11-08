@@ -1,0 +1,29 @@
+.btn-lg {
+  background-color: #eee;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-right: 45%;
+  margin-left: 46%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+}
+
+.col-md-5 {
+  float: right;
+}
+
+.searchPage {
+  font-family: 'Poiret One', cursive;
+}
