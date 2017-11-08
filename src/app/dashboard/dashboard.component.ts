@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { UserDetails } from '../user-details.model';
 import { UserAuthService } from '../user-auth.service';
@@ -14,12 +14,18 @@ export class DashboardComponent implements OnInit {
   favorites: FirebaseListObservable<any[]>;
   fullImagePath: string;
   update: boolean = false;
+  @Input() selectedUser;
 
   constructor(private userAuthService: UserAuthService) { }
 
   ngOnInit() {
-    this.fullImagePath = '../../assets/images/user.png'; 
+    this.fullImagePath = '../../assets/images/user.png';
     // this.favorites = this.userAuthService.getFavorites();
+  //   if (this.selectedUser.image === ""){
+  //   return this.fullImagePath = '../../assets/images/user.png';
+  // } else {
+  //   return this.fullImagePath = '../../assets/images/' + this.selectedUser.image;
+  //   }
   }
 
   updateButtonClicked(){
@@ -29,5 +35,9 @@ export class DashboardComponent implements OnInit {
   saveButtonClicked(){
     this.update = false;
   }
+
+  // addPhoto(image: string){
+  //   this.selectedUser.image += image;
+  // }
 
 }

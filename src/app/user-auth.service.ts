@@ -83,6 +83,16 @@ export class UserAuthService {
          let newUser: UserDetails = new UserDetails(googleUser.email);
          this.addUser(newUser);
        });
-
      }
+
+    //  getUserById( userId: string){
+    //    return this.database.object("users/" + userId);
+    //  }
+     //
+    //  updateUserImage(localUpdateUser){
+    //    let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
+    //    userEntryInFirebase.update({
+    //      image: localUpdateUser.image
+    //    });
+    //  }
 }
