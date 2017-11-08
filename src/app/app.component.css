@@ -1,0 +1,9 @@
+a {
+  color: black;
+}
+
+.container-fluid {
+  background-color: #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
