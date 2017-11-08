@@ -6,6 +6,7 @@
       <div *ngFor="let restaurant of childRestaurants">
         <li><p class="name">{{restaurant.name}}</p></li>
         <p>{{restaurant.formatted_address}}</p>
+        <button type="button" name="button" (click)="addFavorite(restaurant)">Love it!</button>
         <div *ngIf="restaurant.opening_hours">
           <div *ngIf="restaurant.opening_hours.open_now; else elseBlock">
             <p class="open">Open Now</p>
