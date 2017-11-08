@@ -20,3 +20,7 @@
   max-height: 800px;
   overflow: scroll;
 }
+
+.results {
+  margin-right: 20%;
+}
