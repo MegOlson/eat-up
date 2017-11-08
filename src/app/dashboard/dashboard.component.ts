@@ -12,13 +12,13 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class DashboardComponent implements OnInit {
   favorites: FirebaseListObservable<any[]>;
-  fullimagePath: string;
+  fullImagePath: string;
   update: boolean = false;
 
   constructor(private userAuthService: UserAuthService) { }
 
   ngOnInit() {
-    // this.fullImagePath = Something?!?!?!?!
+    this.fullImagePath = '../../assets/images/user.png'; 
     // this.favorites = this.userAuthService.getFavorites();
   }
 

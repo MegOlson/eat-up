@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Poiret+One');
+
 a {
   color: black;
 }
@@ -6,4 +8,13 @@ a {
   background-color: #eee;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.navbar {
+  font-size: 20px;
+  font-family: 'Poiret One', cursive;
+}
+
+.navbar-brand {
+  font-size: 30px;
 }

@@ -1,22 +1,24 @@
-<h2>Restaurant Finder:</h2>
+<div class="searchPage">
+  <h2>Restaurant Finder:</h2>
 
-<form class="search form-inline">
-  <div class="row">
-    <div class="col-md-5">
-      <h4>Where are you?</h4>
-      <input type="text" #newCity required class="form-control" placeholder="Seattle">
+  <form class="search form-inline">
+    <div class="row">
+      <div class="col-md-5">
+        <h4>Where are you?</h4>
+        <input type="text" #newCity required class="form-control" placeholder="Seattle">
+      </div>
+      <div class="col-md-5">
+        <h4>What sounds good?</h4>
+        <input type="text" #newFood class="form-control" required placeholder="Waffles">
+      </div>
     </div>
-    <div class="col-md-5">
-      <h4>What sounds good?</h4>
-      <input type="text" #newFood class="form-control" required placeholder="Waffles">
-    </div>
+  </form>
+  <div class="button">
+    <button type="button" class="btn-lg" (click)="getRestaurants(newCity.value, newFood.value)" name="button">Search</button>
+
   </div>
-</form>
-<div class="button">
-  <button type="button" class="btn-lg" (click)="getRestaurants(newCity.value, newFood.value)" name="button">Search</button>
 
-</div>
-
-<div *ngIf="restaurants">
-  <app-results [childRestaurants]="restaurants"></app-results>
+  <div *ngIf="restaurants">
+    <app-results [childRestaurants]="restaurants"></app-results>
+  </div>
 </div>

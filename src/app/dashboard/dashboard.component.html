@@ -1,26 +1,27 @@
-<h2>Profile</h2>
+<div class="dashboardPage">
+  <h1>Profile</h1>
 
-<div class="row">
-  <div class="col-md-4">
-    <img src="" alt="">Image
-    <button type="button" class="btn" (click)="updateButtonClicked()" name="button">Update Photo</button>
-    <div *ngIf="update">
-      <form>
-        <label for="imageChange">Upload Image</label>
-        <input type="file" name="imageChange" required>
-        <button type="submit" class="btn" (click)="saveButtonClicked()" name="button">Save</button>
-      </form>
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]='fullImagePath'><br>
+      <button type="button" class="btn" id="imageButton" (click)="updateButtonClicked()" name="button">Update Photo</button>
+      <div *ngIf="update">
+        <form>
+          <label for="imageChange">Upload Image</label>
+          <input type="file" name="imageChange" required>
+          <button type="submit" class="btn" (click)="saveButtonClicked()" name="button">Save</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="col-md-8">
-    <h4>Restaurants You Love:</h4>
-    <div class="row">
-      <!-- <div *ngFor="favorite of favorites">-->
-        <div class="col-md-2">
-          <button type="button" class="btn" name="button">Remove</button>
-        </div>
-      <!--</div> -->
+    <div class="col-md-8">
+      <h2>Restaurants You Love:</h2>
+      <div class="row">
+        <!-- <div *ngFor="favorite of favorites">-->
+          <div class="col-md-2">
+            <button type="button" class="btn" name="button">Remove</button>
+          </div>
+        <!--</div> -->
+      </div>
     </div>
-
   </div>
 </div>

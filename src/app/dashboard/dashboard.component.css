@@ -1,11 +1,22 @@
 .btn {
   background-color: #eee;
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
 }
 
 h2 {
   text-align: center;
 }
 
-h4 {
-  text-align: center;
+#imageButton {
+  margin-top: 20px;
+  margin-left: 10%;
+}
+
+.dashboardPage {
+  font-family: 'Poiret One', cursive;
 }
