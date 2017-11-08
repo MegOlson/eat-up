@@ -92,18 +92,26 @@ export class UserAuthService {
          var googleUser = result.user;
 
          let newUser: UserDetails = new UserDetails(googleUser.email);
-         this.addUser(newUser);
+         let userList;
+
+         this.getUsers().subscribe(data => {
+           userList = data;
+           for(let i = 0; i < userList; i++){
+            if (userList[i].email === newUser.email) {
+              console.log("User is in database")
+            } else {
+              this.addUser(newUser);
+            }
+           }
+         });
+
        });
      }
 
-    //  getUserById( userId: string){
-    //    return this.database.object("users/" + userId);
-    //  }
-     //
-    //  updateUserImage(localUpdateUser){
-    //    let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
-    //    userEntryInFirebase.update({
-    //      image: localUpdateUser.image
-    //    });
-    //  }
+     updateUserImage(localUpdateUser){
+       let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
+       userEntryInFirebase.update({
+         image: localUpdateUser.image
+       });
+     }
 }
