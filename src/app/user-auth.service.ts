@@ -108,10 +108,10 @@ export class UserAuthService {
        });
      }
 
-    //  updateUserImage(localUpdateUser){
-    //    let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
-    //    userEntryInFirebase.update({
-    //      image: localUpdateUser.image
-    //    });
-    //  }
+     updateUserImage(localUpdateUser){
+       let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
+       userEntryInFirebase.update({
+         image: localUpdateUser.image
+       });
+     }
 }

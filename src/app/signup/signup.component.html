@@ -19,9 +19,9 @@
     <input type="password" class="form-control" #newPassword required>
 
     <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" class="form-control" #newConfirmPassword required>
+    <input type="password" class="form-control" #newConfirmPassword required><br>
 
     <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value, newConfirmPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value=''; newConfirmPassword.value='';"
-      type="button" name="button">Submit</button>
+      type="button" name="button" class="btn">Submit</button>
     </form>
 </div>
