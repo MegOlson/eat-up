@@ -19,9 +19,9 @@ export class UserAuthService {
     this.userDetailList = database.list("users");
   }
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-  }
+  // login() {
+  //   this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  // }
 
   logout() {
     this.afAuth.auth.signOut();
@@ -38,8 +38,6 @@ export class UserAuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((respond) => {
         let user = firebase.auth().currentUser;
-        console.log(user, "HELLO");
-        console.log(this.userDetailList, "hello");
          user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: ""
@@ -74,6 +72,13 @@ export class UserAuthService {
    }
 
    googleSignIn() {
-       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result) => {
+         var token = result.credential.accessToken;
+         var googleUser = result.user;
+
+         let newUser: UserDetails = new UserDetails(googleUser.email);
+         this.addUser(newUser);
+       });
+
      }
 }
