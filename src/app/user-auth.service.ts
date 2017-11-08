@@ -50,7 +50,6 @@ export class UserAuthService {
 
       })
       .then(() => firebase.auth().signOut())
-      // .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
       .catch((error) => {
         this.createUserError = error.message;
       });
