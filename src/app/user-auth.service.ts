@@ -4,7 +4,6 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { Observable } from "rxjs/Observable";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase/app";
-
 import { UserDetails } from './user-details.model';
 
 
@@ -19,6 +18,10 @@ export class UserAuthService {
     this.userDetailList = database.list("users");
   }
 
+  getUsers() {
+    return this.userDetailList;
+  }
+
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
@@ -27,8 +30,21 @@ export class UserAuthService {
     this.afAuth.auth.signOut();
   }
 
-  addToFavoritesList(chosenRestaurant) {
-    console.log(this.userDetailList);
+  addToFavoritesList(userToUpdate) {
+    let userFromFirebase= this.getUserById(userToUpdate.$key);
+    userFromFirebase.update({ email: userToUpdate.email,
+                          favorites: userToUpdate.favorites,
+                          image: userToUpdate.image
+    });
+  }
+
+  getUserById(userId: string){
+    return this.database.object('/users/' + userId);
+  }
+
+  getUserEmail(){
+    console.log(firebase.auth().currentUser.email);
+    return firebase.auth().currentUser.email;
   }
 
   createUser(

@@ -10,8 +10,17 @@ export class UserPipe implements PipeTransform {
 
   constructor(private userAuthService: UserAuthService){}
 
-  transform(){
-    
+  transform(input: UserDetails[]){
+    let output: UserDetails[] = [];
+    let email = this.userAuthService.getUserEmail();
+    console.log("input", input)
+    for(let i = 0; i < input.length; i ++){
+      if(input[i].email === email) {
+        output.push(input[i]);
+      }
+    }
+    console.log("output", output)
+    return output
   }
 
 }
