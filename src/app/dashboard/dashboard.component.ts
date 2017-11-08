@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   update: boolean = false;
   @Input() selectedUser;
   subUsers;
+  currentUserImageUpdate;
 
   constructor(private userAuthService: UserAuthService) { }
 
@@ -26,12 +27,13 @@ export class DashboardComponent implements OnInit {
       this.subUsers = data;
     })
     this.fullImagePath = '../../assets/images/user.png';
+    console.log(this.currentUserImageUpdate);
     // this.favorites = this.userAuthService.getFavorites();
-  //   if (this.selectedUser.image === ""){
-  //   return this.fullImagePath = '../../assets/images/user.png';
-  // } else {
-  //   return this.fullImagePath = '../../assets/images/' + this.selectedUser.image;
-  //   }
+    if (this.currentUserImageUpdate.image.match(" ") ){
+    return this.fullImagePath = '../../assets/images/user.png';
+  } else {
+    return this.fullImagePath = '../../assets/images/' + this.currentUserImageUpdate.image;
+    }
   }
 
   removeItem(userToUpdate, favoriteToDelete) {
@@ -43,12 +45,11 @@ export class DashboardComponent implements OnInit {
     this.update = true;
   }
 
-  saveButtonClicked(){
+  savePhotoButtonClicked(image: string, userToUpdate: UserDetails){
     this.update = false;
+    this.currentUserImageUpdate = userToUpdate;
+    userToUpdate.image = image.slice(12, image.length);
+    this.userAuthService.updateUserImage(userToUpdate);
   }
-
-  // addPhoto(image: string){
-  //   this.selectedUser.image += image;
-  // }
 
 }
