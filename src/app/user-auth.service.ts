@@ -20,6 +20,8 @@ export class UserAuthService {
     return this.users;
   }
 
+
+  // this.database.object(users/0)
   addToFavoritesList(chosenRestaurant) {
     this.users.subscribe(user => user.forEach(function(detail){
       if (detail.email === firebase.auth().currentUser.email) {
