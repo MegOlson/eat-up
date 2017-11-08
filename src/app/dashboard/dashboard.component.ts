@@ -13,12 +13,18 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class DashboardComponent implements OnInit {
   favorites: FirebaseListObservable<any[]>;
   fullImagePath: string;
+  users: FirebaseListObservable<any[]>
   update: boolean = false;
   @Input() selectedUser;
+  subUsers;
 
   constructor(private userAuthService: UserAuthService) { }
 
   ngOnInit() {
+    this.users = this.userAuthService.getUsers();
+    this.users.subscribe(data => {
+      this.subUsers = data;
+    })
     this.fullImagePath = '../../assets/images/user.png';
     // this.favorites = this.userAuthService.getFavorites();
   //   if (this.selectedUser.image === ""){
@@ -26,6 +32,11 @@ export class DashboardComponent implements OnInit {
   // } else {
   //   return this.fullImagePath = '../../assets/images/' + this.selectedUser.image;
   //   }
+  }
+
+  removeItem(userToUpdate, favoriteToDelete) {
+    userToUpdate.favorites.splice(favoriteToDelete, 1);
+    this.userAuthService.addToFavoritesList(userToUpdate);
   }
 
   updateButtonClicked(){
