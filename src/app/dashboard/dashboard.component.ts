@@ -12,13 +12,20 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class DashboardComponent implements OnInit {
   favorites: FirebaseListObservable<any[]>;
+  users: FirebaseListObservable<any[]>
   fullImagePath: string;
   update: boolean = false;
   @Input() selectedUser;
+  subUsers;
+
 
   constructor(private userAuthService: UserAuthService) { }
 
   ngOnInit() {
+    this.users = this.userAuthService.getUsers();
+    this.users.subscribe(data => {
+      this.subUsers = data;
+    })
     this.fullImagePath = '../../assets/images/user.png';
     // this.favorites = this.userAuthService.getFavorites();
   //   if (this.selectedUser.image === ""){
@@ -27,7 +34,6 @@ export class DashboardComponent implements OnInit {
   //   return this.fullImagePath = '../../assets/images/' + this.selectedUser.image;
   //   }
   }
-
   updateButtonClicked(){
     this.update = true;
   }
