@@ -27,6 +27,10 @@ export class UserAuthService {
     this.afAuth.auth.signOut();
   }
 
+  addToFavoritesList(chosenRestaurant) {
+    console.log(this.userDetailList);
+  }
+
   createUser(
     email: string,
     password: string,

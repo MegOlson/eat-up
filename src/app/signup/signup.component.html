@@ -1,24 +1,39 @@
-<form>
-  <label for="firstname">First Name:</label>
-  <input type="text" class="form-control" #newFirstName required>
+<div class="signUpPage">
+  <form>
+    <label for="firstname">First Name:</label>
+    <input type="text" class="form-control" #newFirstName required>
 
-  <label for="lastname">Last Name:</label>
-  <input type="text" class="form-control" #newLastName required>
+    <label for="lastname">Last Name:</label>
+    <input type="text" class="form-control" #newLastName required>
 
-  <div *ngIf = "emailError">{{emailError}}</div>
 
-  <div *ngIf="anyError()">{{userError}}</div>
+    <div *ngIf = "emailError">{{emailError}}</div>
 
-  <label for="email">Email:</label>
-  <input type="email" class="form-control" #newEmail required>
+    <div *ngIf="anyError()">{{userError}}</div>
 
-  <div *ngIf = "passwordError">{{passwordError}}</div>
-  <label for="password">Password:</label>
-  <input type="password" class="form-control" #newPassword required>
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" #newEmail required>
 
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" class="form-control" #newConfirmPassword required>
+    <div *ngIf = "passwordError">{{passwordError}}</div>
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" #newPassword required>
 
-  <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value, newConfirmPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value=''; newConfirmPassword.value='';"
-    type="button" name="button">Submit</button>
-</form>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" class="form-control" #newConfirmPassword required>
+
+    <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value, newConfirmPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value=''; newConfirmPassword.value='';"
+      type="button" name="button">Submit</button>
+    </form>
+
+    <form>
+      <div *ngIf = "error">{{error}}</div>
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" #newEmail required>
+
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" #newPassword required>
+
+      <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value='';"
+        type="button" name="button">Submit</button>
+    </form>
+</div>
