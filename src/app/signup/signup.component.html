@@ -24,16 +24,4 @@
     <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value, newConfirmPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value=''; newConfirmPassword.value='';"
       type="button" name="button">Submit</button>
     </form>
-
-    <form>
-      <div *ngIf = "error">{{error}}</div>
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" #newEmail required>
-
-      <label for="password">Password:</label>
-      <input type="password" class="form-control" #newPassword required>
-
-      <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value='';"
-        type="button" name="button">Submit</button>
-    </form>
 </div>
