@@ -9,8 +9,8 @@
         <div *ngIf="update">
           <form>
             <label for="imageChange">Upload Image</label>
-            <input type="file" name="imageChange" required>
-            <button type="submit" class="btn" (click)="saveButtonClicked()" name="button">Save</button>
+            <input type="file" name="imageChange" #newPhoto required>
+            <button type="button" class="btn" (click)="savePhotoButtonClicked(newPhoto.value, currentUser)" name="button">Save</button>
           </form>
         </div>
       </div>
