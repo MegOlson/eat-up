@@ -20,19 +20,10 @@ export class UserAuthService {
     return this.users;
   }
 
-
+  // firebase.auth().currentUser.email
   // this.database.object(users/0)
   addToFavoritesList(chosenRestaurant) {
-    this.users.subscribe(user => user.forEach(function(detail){
-      if (detail.email === firebase.auth().currentUser.email) {
-        detail.favorites.push(chosenRestaurant.name);
-        console.log(detail);
-        console.log(firebase.auth().currentUser.email);
-        detail.update({email: detail.email,
-                      favorites: detail.favorites,
-                      image: detail.image});
-      }
-    }));
+    console.log(this.users);
   }
 
 

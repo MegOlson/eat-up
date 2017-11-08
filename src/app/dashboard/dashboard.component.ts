@@ -11,10 +11,20 @@ import { FirebaseListObservable } from 'angularfire2/database';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  fullimagePath: string;
+  update: boolean = false;
   constructor() { }
 
   ngOnInit() {
+    // this.fullImagePath = Something?!?!?!?!
+  }
+
+  updateButtonClicked(){
+    this.update = true;
+  }
+
+  saveButtonClicked(){
+    this.update = false;
   }
 
 }

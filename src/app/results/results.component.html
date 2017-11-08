@@ -1,4 +1,4 @@
-<h1>Restaurants:</h1>
+<h2>Restaurants:</h2>
 
 <div class="row">
   <div class="col-md-3 list">
@@ -19,13 +19,13 @@
   <div class="col-md-9">
     <sebm-google-map [zoom]="zoom" [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
       <div *ngFor="let restaurant of childRestaurants">
-        <div *ngFor="let number of numbers">
-          <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng [label]="number">
+        <!-- <div *ngFor="let number of numbers"> -->
+          <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
             <sebm-google-map-info-window>
               {{restaurant.name}}
             </sebm-google-map-info-window>
           </sebm-google-map-marker>
-        </div>
+        <!-- </div> -->
       </div>
     </sebm-google-map>
   </div>
