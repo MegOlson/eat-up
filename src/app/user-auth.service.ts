@@ -11,10 +11,12 @@ import { UserDetails } from './user-details.model';
 @Injectable()
 export class UserAuthService {
   user: Observable<firebase.User>;
+  userDetailList: FirebaseListObservable<any[]>;
   createUserError: string;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase) {
     this.user = afAuth.authState;
+    this.userDetailList = database.list("users");
   }
 
   login() {
@@ -31,15 +33,21 @@ export class UserAuthService {
     firstName: string,
     lastName: string
   ) {
-    return firebase
+      firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(function(respond) {
+      .then((respond) => {
         let user = firebase.auth().currentUser;
-        return user.updateProfile({
+        console.log(user, "HELLO");
+        console.log(this.userDetailList, "hello");
+         user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: ""
         });
+        let newUser: UserDetails = new UserDetails(email);
+        newUser.userId = user.uid;
+        this.addUser(newUser);
+
       })
       .then(() => firebase.auth().signOut())
       // .then(() => firebase.auth().signInWithEmailAndPassword(email, password))
@@ -47,6 +55,10 @@ export class UserAuthService {
         this.createUserError = error.message;
       });
 
+  }
+
+  addUser(newUserDetails: UserDetails) {
+    this.userDetailList.push(newUserDetails);
   }
 
   signIn(
