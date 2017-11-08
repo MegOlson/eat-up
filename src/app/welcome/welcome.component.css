@@ -5,4 +5,13 @@ h1 {
 }
 .welcomePage {
   font-family: 'Poiret One', cursive;
+  /*color: white;*/
 }
+/*
+.my-container{
+    background-image: url('res.jpg');
+    background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+ }*/

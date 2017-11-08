@@ -24,8 +24,9 @@ export class ResultsComponent {
     })
   }
 
-  addFavorite(chosenRestaurant, userToUpdate) {
+  addFavorite(chosenRestaurant, restaurantAddress, userToUpdate) {
     userToUpdate.favorites.push(chosenRestaurant);
+    userToUpdate.addresses.push(restaurantAddress);
     this.userAuthService.addToFavoritesList(userToUpdate);
   }
 
