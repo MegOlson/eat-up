@@ -24,9 +24,30 @@ export class ResultsComponent {
     })
   }
 
-  addFavorite(chosenRestaurant, userToUpdate) {
+  addFavorite(chosenRestaurant, chosenRestaurantAddress, userToUpdate) {
     userToUpdate.favorites.push(chosenRestaurant);
+    // userToUpdate.addresses.push(chosenRestaurantAddress);
     this.userAuthService.addToFavoritesList(userToUpdate);
   }
+
+
+// Replace previous method in UserAuth Service
+  // addToFavoritesList(userToUpdate) {
+  //   let userFromFirebase= this.getUserById(userToUpdate.$key);
+  //   userFromFirebase.update({ email: userToUpdate.email,
+  //                         favorites: userToUpdate.favorites,
+  //                         image: userToUpdate.image,
+  //                         addresses: userToUpdate.addresses
+  //   });
+  // }
+
+// Replace previous method in Dashbaord Component
+  // removeItem(userToUpdate, favoriteToDelete, addressToDelete) {
+  //   userToUpdate.favorites.splice(favoriteToDelete, 1);
+  //   userToUpdate.addresses.splice(addressToDelete, 1);
+  //   this.userAuthService.addToFavoritesList(userToUpdate);
+  // }
+
+  // Pass through address in Dashboard html
 
 }
