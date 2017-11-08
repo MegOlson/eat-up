@@ -34,9 +34,14 @@ export class DashboardComponent implements OnInit {
   //   return this.fullImagePath = '../../assets/images/' + this.selectedUser.image;
   //   }
   }
+
   updateButtonClicked(){
     this.update = true;
   }
+
+  // beginRemovingItem(favoriteToDelete, currentUser) {
+  //   this.userAuthService.removeFavoriteItem(favoriteToDelete, currentUser);
+  // }
 
   saveButtonClicked(){
     this.update = false;

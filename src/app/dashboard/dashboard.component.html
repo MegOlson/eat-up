@@ -1,4 +1,4 @@
-<div *ngFor="let currentUser of subUsers | user">
+<div *ngFor="let currentUser of subUsers | async | user">
   <div class="dashboardPage">
     <h1>Profile</h1>
     <div class="row">
@@ -19,7 +19,7 @@
           <div *ngFor="let favorite of currentUser.favorites | slice:1">
             <div class="col-md-2">
               <h5>{{favorite}}</h5>
-              <button type="button" class="btn" name="button">Remove</button>
+              <button type="button" class="btn" (click)="removeItem(favorite, currentUser)" name="button">Remove</button>
             </div>
           </div>
         </div>
