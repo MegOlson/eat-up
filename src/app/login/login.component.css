@@ -1,3 +1,36 @@
 .loginPage {
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
+  position: absolute;
+  top: 50%;
+  left: 29%;
+  transform: translate(-50%, -50%);
+}
+
+.google-button {
+  background-color: #d64e4e;
+}
+
+label,
+.google-button,
+.signup,
+.eat-up-btn {
+  color: white;
+}
+
+.google-button,
+.signup,
+.eat-up-btn {
+  letter-spacing: 2px;
+}
+
+.well {
+  background-color: #4c4c4c;
+}
+
+.signup {
+  background-color: #313b57;
+}
+
+.eat-up-btn {
+  background-color: rgb(118, 190, 142);
 }

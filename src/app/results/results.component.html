@@ -4,14 +4,18 @@
       <div class="col-md-3 list">
         <ol>
           <div *ngFor="let restaurant of childRestaurants">
-            <li><p class="name">{{restaurant.name}}</p></li>
+            <li>
+              <p class="name">{{restaurant.name}}</p>
+            </li>
             <p>{{restaurant.formatted_address}}</p>
-            <button type="button" name="button" (click)="addFavorite(restaurant.name, currentUser)">Love it!</button>
+            <button type="button" name="button" (click)="addFavorite(restaurant.name,restaurant.formatted_address, currentUser)">Love it!</button>
             <div *ngIf="restaurant.opening_hours">
               <div *ngIf="restaurant.opening_hours.open_now; else elseBlock">
                 <p class="open">Open Now</p>
               </div>
-              <ng-template #elseBlock><p class="closed">Closed</p></ng-template>
+              <ng-template #elseBlock>
+                <p class="closed">Closed</p>
+              </ng-template>
             </div>
           </div>
         </ol>
@@ -20,11 +24,11 @@
         <sebm-google-map [zoom]="zoom" [latitude]=childRestaurants[0].geometry.location.lat [longitude]=childRestaurants[0].geometry.location.lng>
           <div *ngFor="let restaurant of childRestaurants">
             <!-- <div *ngFor="let number of numbers"> -->
-              <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
-                <sebm-google-map-info-window>
-                  {{restaurant.name}}
-                </sebm-google-map-info-window>
-              </sebm-google-map-marker>
+            <sebm-google-map-marker [latitude]=restaurant.geometry.location.lat [longitude]=restaurant.geometry.location.lng>
+              <sebm-google-map-info-window>
+                {{restaurant.name}}
+              </sebm-google-map-info-window>
+            </sebm-google-map-marker>
             <!-- </div> -->
           </div>
         </sebm-google-map>

@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { UserAuthService } from "./user-auth.service";
+import { Router } from "@angular/router";
 import {
   AngularFireDatabase,
   FirebaseListObservable
@@ -9,18 +10,17 @@ import { Observable } from "rxjs/Observable";
 import * as firebase from "firebase/app";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
   providers: [AngularFireAuth, UserAuthService]
 })
-
 export class AppComponent {
   user;
-private isLoggedIn: Boolean;
-private userName: String;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  constructor(public authService: UserAuthService) {
+  constructor(public authService: UserAuthService, private router: Router) {
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
@@ -29,9 +29,21 @@ private userName: String;
         this.userName = user.displayName;
       }
     });
+
+    this.router.events.subscribe((event: any) => {
+      // console.log(event);
+      document.body.classList.remove("signup-page", "login-page");
+
+      if (event.url.startsWith("/signup")) {
+        document.body.classList.add("signup-page");
+      } else if (event.url.startsWith("/login")) {
+        document.body.classList.add("login-page");
+      }
+    });
   }
-  
+
   logout() {
     this.authService.logout();
+    this.router.navigate([""]);
   }
 }
