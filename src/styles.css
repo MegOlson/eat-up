@@ -29,7 +29,6 @@ html {
   margin-top: -2px;
 }
 
-/* .my-container {
-  width: 100vh;
-  height: 100vw;
-} */
+.dashboardPage {
+  background-color: lavendar;
+}
