@@ -32,11 +32,12 @@ export class AppComponent {
 
     this.router.events.subscribe((event: any) => {
       // console.log(event);
+      document.body.classList.remove("signup-page", "login-page");
 
       if (event.url.startsWith("/signup")) {
         document.body.classList.add("signup-page");
-      } else {
-        document.body.classList.remove("signup-page");
+      } else if (event.url.startsWith("/login")) {
+        document.body.classList.add("login-page");
       }
     });
   }

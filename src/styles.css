@@ -20,6 +20,15 @@ html {
   margin-top: -2px;
 }
 
+.login-page {
+  background-image: url("/assets/images/login_background.jpg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -2px;
+}
+
 /* .my-container {
   width: 100vh;
   height: 100vw;
