@@ -1,5 +1,5 @@
 <div class="signUpPage">
-  <form>
+  <form class="well">
     <label for="firstname">First Name:</label>
     <input type="text" class="form-control" #newFirstName required>
 
@@ -7,21 +7,22 @@
     <input type="text" class="form-control" #newLastName required>
 
 
-    <div *ngIf = "emailError">{{emailError}}</div>
+    <div *ngIf="emailError" class="text-danger">{{emailError}}</div>
 
-    <div *ngIf="anyError()">{{userError}}</div>
+    <div *ngIf="anyError()" class="text-danger">{{userError}}</div>
 
     <label for="email">Email:</label>
     <input type="email" class="form-control" #newEmail required>
 
-    <div *ngIf = "passwordError">{{passwordError}}</div>
+    <div *ngIf="passwordError" class="text-danger">{{passwordError}}</div>
     <label for="password">Password:</label>
     <input type="password" class="form-control" #newPassword required>
 
     <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" class="form-control" #newConfirmPassword required><br>
+    <input type="password" class="form-control" #newConfirmPassword required>
+    <br>
 
     <button (click)="submitSignUpForm(newFirstName.value, newLastName.value, newEmail.value, newPassword.value, newConfirmPassword.value);newFirstName.value=''; newLastName.value=''; newEmail.value=''; newPassword.value=''; newConfirmPassword.value='';"
       type="button" name="button" class="btn">Submit</button>
-    </form>
+  </form>
 </div>

@@ -1,11 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-body, html{
-   padding: 0;
-   width: 100vw;
-   height: 100vh;
- }
+body,
+html {
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
-/*.my-container{
-  width:100vh;
-  height:100vw;
-}*/
+.signup-page {
+  background-image: url("/assets/images/signup_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -2px;
+}
+
+/* .my-container {
+  width: 100vh;
+  height: 100vw;
+} */

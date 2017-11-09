@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { UserAuthService } from "./user-auth.service";
 import { Router } from "@angular/router";
 import {
@@ -27,6 +27,16 @@ export class AppComponent {
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
+      }
+    });
+
+    this.router.events.subscribe((event: any) => {
+      // console.log(event);
+
+      if (event.url.startsWith("/signup")) {
+        document.body.classList.add("signup-page");
+      } else {
+        document.body.classList.remove("signup-page");
       }
     });
   }
