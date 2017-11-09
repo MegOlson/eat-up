@@ -30,7 +30,8 @@ export class UserAuthService {
     let userFromFirebase= this.getUserById(userToUpdate.$key);
     userFromFirebase.update({ email: userToUpdate.email,
                           favorites: userToUpdate.favorites,
-                          image: userToUpdate.image
+                          image: userToUpdate.image,
+                          addresses: userToUpdate.addresses
     });
   }
 
