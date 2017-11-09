@@ -4,13 +4,19 @@
 
     <div class="row">
       <div class="col-md-4">
-        <img [src]='fullImagePath'><br>
+        <div *ngIf="currentUser.image">
+          <img src='{{currentUser.image}}'>
+        </div>
+        <div *ngIf="!currentUser.image">
+          <img [src]='fullImagePath'>
+        </div>
+        <br>
         <button type="button" class="btn" id="imageButton" (click)="updateButtonClicked()" name="button">Update Photo</button>
         <div *ngIf="update">
           <form>
             <label for="imageChange">Upload Image</label>
             <input type="file" name="imageChange" #newPhoto required>
-            <button type="button" class="btn" (click)="savePhotoButtonClicked(newPhoto.value, currentUser)" name="button">Save</button>
+            <button type="button" class="btn" (click)="savePhotoButtonClicked(newPhoto, currentUser)" name="button">Save</button>
           </form>
         </div>
       </div>
@@ -20,7 +26,7 @@
           <div *ngFor="let favorite of currentUser.favorites | slice:1">
             <div class="col-md-2">
               <h5>{{favorite}}</h5>
-              <button type="button"  (click)="removeItem(currentUser, favorite)" class="btn" name="button">Remove</button>
+              <button type="button" (click)="removeItem(currentUser, favorite)" class="btn" name="button">Remove</button>
             </div>
           </div>
         </div>
