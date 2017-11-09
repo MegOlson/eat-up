@@ -31,7 +31,6 @@ export class AppComponent {
     });
 
     this.router.events.subscribe((event: any) => {
-      // console.log(event);
       document.body.classList.remove("signup-page", "login-page");
 
       if (event.url.startsWith("/signup")) {

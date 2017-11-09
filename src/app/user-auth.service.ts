@@ -61,9 +61,7 @@ export class UserAuthService {
       })
       .then(() => firebase.auth().signOut())
       .catch(error => {
-        console.log(this);
         this.createUserError = error.message;
-        console.log(error.message, "service");
       });
   }
 
@@ -95,11 +93,9 @@ export class UserAuthService {
 
         this.getUsers().subscribe(data => {
           userList = data;
-          console.log(userList);
           const findUser = user => {
             return user.email === newUser.email;
           };
-          console.log(userList.find(findUser));
           if (!userList.find(findUser)) {
             this.addUser(newUser);
           }

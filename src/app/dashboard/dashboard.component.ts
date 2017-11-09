@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit {
   }
 
   savePhotoButtonClicked(image: any, userToUpdate: UserDetails) {
-    console.log(userToUpdate, "hello");
     const canvas = document.createElement("canvas");
     canvas.setAttribute("width", "200px");
     canvas.setAttribute("height", "200px");

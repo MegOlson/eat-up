@@ -49,10 +49,8 @@ export class SignupComponent implements OnInit {
     }  else {
       this.authService.createUser(email, password, firstName, lastName);
       if (this.signupAnyError) {
-        console.log(this.signupAnyError, "signup");
       }else {
         this.router.navigate([""]);
-        console.log(this.signupAnyError, "signup1");
       }
     }
   }
@@ -77,11 +75,9 @@ export class SignupComponent implements OnInit {
 
   signupAnyError(){
     if(this.authService.createUserError){
-      console.log("has error")
       this.userError = this.authService.createUserError;
       return true;
     } else {
-      console.log("no error")
       return false;
     }
   }
