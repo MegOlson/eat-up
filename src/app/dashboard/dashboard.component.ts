@@ -30,7 +30,8 @@ export class DashboardComponent implements OnInit {
   }
 
   removeItem(userToUpdate, favoriteToDelete) {
-    userToUpdate.favorites.splice(favoriteToDelete, 1);
+    let index = userToUpdate.favorites.indexOf(favoriteToDelete);
+    userToUpdate.favorites.splice(index, 1);
     this.userAuthService.updateUserInDatabase(userToUpdate);
   }
 
