@@ -5,3 +5,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.well {
+  background-color: #2a1208;
+}
+
+label,
+.btn {
+  color: white;
+}
+
+.btn {
+  background-color: #4c6f54;
+  font-size: 20px;
+}
