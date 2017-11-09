@@ -50,7 +50,7 @@ No known bugs
 
 ## Support and contact details
 
-_Feel free to contact Megan at meganannetteolson@yahoo.com, Kristen at kristen.m.kulha@gmail.com, Elrey at SOMETHING, and Linda at SOMETHING_
+_Feel free to contact Megan at meganannetteolson@yahoo.com, Kristen at kristen.m.kulha@gmail.com, Elrey at elbelmonti@gmail.com, and Linda at SOMETHING_
 
 ## Further help
 
