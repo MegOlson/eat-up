@@ -31,7 +31,7 @@ export class AppComponent {
     });
 
     this.router.events.subscribe((event: any) => {
-      document.body.classList.remove("signup-page", "login-page");
+      document.body.classList.remove("signup-page", "login-page", "dashboard-page", "welcome-page");
 
       if (event.url.startsWith("/signup")) {
         document.body.classList.add("signup-page");
@@ -39,6 +39,8 @@ export class AppComponent {
         document.body.classList.add("login-page");
       } else if (event.url.startsWith("/dashboard")) {
         document.body.classList.add("dashboard-page");
+      } else if (event.url.startsWith("")) {
+        document.body.classList.add("welcome-page");
       }
     });
   }
