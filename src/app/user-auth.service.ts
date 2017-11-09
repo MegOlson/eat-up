@@ -32,15 +32,6 @@ export class UserAuthService {
     this.afAuth.auth.signOut();
   }
 
-  addToFavoritesList(userToUpdate) {
-    let userFromFirebase = this.getUserById(userToUpdate.$key);
-    userFromFirebase.update({
-      email: userToUpdate.email,
-      favorites: userToUpdate.favorites,
-      image: userToUpdate.image
-    });
-  }
-
   getUserById(userId: string) {
     return this.database.object("/users/" + userId);
   }
@@ -114,10 +105,12 @@ export class UserAuthService {
       });
   }
 
-  updateUserImage(localUpdateUser) {
-    const userEntryInFirebase = this.getUserById(localUpdateUser.$key);
-    userEntryInFirebase.update({
-      image: localUpdateUser.image
+  updateUserInDatabase(userToUpdate) {
+    const userFromFirebase = this.getUserById(userToUpdate.$key);
+    userFromFirebase.update({
+      email: userToUpdate.email,
+      favorites: userToUpdate.favorites,
+      image: userToUpdate.image
     });
   }
 }

@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   removeItem(userToUpdate, favoriteToDelete) {
     userToUpdate.favorites.splice(favoriteToDelete, 1);
-    this.userAuthService.addToFavoritesList(userToUpdate);
+    this.userAuthService.updateUserInDatabase(userToUpdate);
   }
 
   updateButtonClicked() {
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
             canvas.height
           );
           userToUpdate.image = canvas.toDataURL();
-          this.userAuthService.updateUserImage(userToUpdate);
+          this.userAuthService.updateUserInDatabase(userToUpdate);
           this.currentUserImageUpdate = userToUpdate;
         });
         img.src = e.target.result;
