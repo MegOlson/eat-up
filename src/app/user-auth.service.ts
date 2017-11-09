@@ -59,12 +59,12 @@ export class UserAuthService {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(respond => {
-        let user = firebase.auth().currentUser;
+        const user = firebase.auth().currentUser;
         user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: ""
         });
-        let newUser: UserDetails = new UserDetails(email);
+        const newUser: UserDetails = new UserDetails(email);
         newUser.userId = user.uid;
         this.addUser(newUser);
       })
@@ -94,27 +94,28 @@ export class UserAuthService {
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(result => {
-        var token = result.credential.accessToken;
-        var googleUser = result.user;
+        // var token = result.credential.accessToken;
+        const googleUser = result.user;
 
-        let newUser: UserDetails = new UserDetails(googleUser.email);
+        const newUser: UserDetails = new UserDetails(googleUser.email);
         let userList;
 
         this.getUsers().subscribe(data => {
           userList = data;
-          for (let i = 0; i < userList; i++) {
-            if (userList[i].email === newUser.email) {
-              console.log("User is in database");
-            } else {
-              this.addUser(newUser);
-            }
+          console.log(userList);
+          const findUser = user => {
+            return user.email === newUser.email;
+          };
+          console.log(userList.find(findUser));
+          if (!userList.find(findUser)) {
+            this.addUser(newUser);
           }
         });
       });
   }
 
   updateUserImage(localUpdateUser) {
-    let userEntryInFirebase = this.getUserById(localUpdateUser.$key);
+    const userEntryInFirebase = this.getUserById(localUpdateUser.$key);
     userEntryInFirebase.update({
       image: localUpdateUser.image
     });
