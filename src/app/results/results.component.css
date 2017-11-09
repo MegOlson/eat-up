@@ -8,11 +8,11 @@
 }
 
 .open {
-  color: green;
+  color: #20d239;
 }
 
 .closed {
-  color: red;
+  color: #dc0303;
 }
 
 .list {
@@ -24,4 +24,15 @@
 .resultsPage {
   margin-right: 20%;
   font-family: 'Poiret One', cursive;
+  color: white;
+}
+
+.btn {
+  background-color: rgb(118, 190, 142);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }

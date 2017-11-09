@@ -1,7 +1,7 @@
 <div class="loginPage well">
 
   <form>
-    <div *ngIf="anyError()">{{loginError}}</div>
+    <div *ngIf="anyError()" class="text-danger">{{loginError}}</div>
     <label for="email">Email:</label>
     <input type="text" name="email" #inputEmail class="form-control">
     <label for="password">Password:</label>

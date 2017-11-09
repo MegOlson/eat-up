@@ -30,7 +30,7 @@ html {
 }
 
 .dashboard-page {
-  background-color: lavender;
+  background-color: #968a7b;
 }
 
 .welcome-page {
@@ -41,4 +41,8 @@ html {
   background-size: cover;
   margin-top: -2px;
   color: white;
+}
+
+.search-page {
+  background-color: white;
 }

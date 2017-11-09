@@ -8,7 +8,7 @@
               <p class="name">{{restaurant.name}}</p>
             </li>
             <p>{{restaurant.formatted_address}}</p>
-            <button type="button" name="button" (click)="addFavorite(restaurant.name,restaurant.formatted_address, currentUser)">Love it!</button>
+            <button type="button"  class="btn" name="button" (click)="addFavorite(restaurant.name,restaurant.formatted_address, currentUser)">Love it!</button>
             <div *ngIf="restaurant.opening_hours">
               <div *ngIf="restaurant.opening_hours.open_now; else elseBlock">
                 <p class="open">Open Now</p>
