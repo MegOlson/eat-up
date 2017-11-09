@@ -61,7 +61,9 @@ export class UserAuthService {
       })
       .then(() => firebase.auth().signOut())
       .catch(error => {
+        console.log(this);
         this.createUserError = error.message;
+        console.log(error.message, "service");
       });
   }
 
@@ -112,5 +114,9 @@ export class UserAuthService {
       favorites: userToUpdate.favorites,
       image: userToUpdate.image
     });
+  }
+
+  returnErrors(){
+    return this.createUserError;
   }
 }

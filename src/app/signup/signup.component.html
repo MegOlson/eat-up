@@ -9,7 +9,7 @@
 
     <div *ngIf="emailError" class="text-danger">{{emailError}}</div>
 
-    <div *ngIf="anyError()" class="text-danger">{{userError}}</div>
+    <div *ngIf="signupAnyError()" class="text-danger">{{userError}}</div>
 
     <label for="email">Email:</label>
     <input type="email" class="form-control" #newEmail required>

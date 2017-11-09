@@ -23,11 +23,11 @@ export class SignupComponent implements OnInit {
   userError: string;
 
   constructor(
-    public authService: UserAuthService,
+    private authService: UserAuthService,
     private route: ActivatedRoute,
     private location: Location,
-    public afAuth: AngularFireAuth,
-    public router: Router
+    private afAuth: AngularFireAuth,
+    private router: Router
   ) {
     this.user = afAuth.authState;
 
@@ -48,7 +48,12 @@ export class SignupComponent implements OnInit {
       this.passwordError = "Passwords do not match!"
     }  else {
       this.authService.createUser(email, password, firstName, lastName);
-      this.router.navigate([""]);
+      if (this.signupAnyError) {
+        console.log(this.signupAnyError, "signup");
+      }else {
+        this.router.navigate([""]);
+        console.log(this.signupAnyError, "signup1");
+      }
     }
   }
 
@@ -70,12 +75,15 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  anyError(){
+  signupAnyError(){
     if(this.authService.createUserError){
+      console.log("has error")
       this.userError = this.authService.createUserError;
       return true;
+    } else {
+      console.log("no error")
+      return false;
     }
-    return false;
   }
 
 }
