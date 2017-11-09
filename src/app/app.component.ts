@@ -37,6 +37,8 @@ export class AppComponent {
         document.body.classList.add("signup-page");
       } else if (event.url.startsWith("/login")) {
         document.body.classList.add("login-page");
+      } else if (event.url.startsWith("/dashboard")) {
+        document.body.classList.add("dashboard-page");
       }
     });
   }
