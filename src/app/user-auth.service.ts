@@ -110,7 +110,8 @@ export class UserAuthService {
     userFromFirebase.update({
       email: userToUpdate.email,
       favorites: userToUpdate.favorites,
-      image: userToUpdate.image
+      image: userToUpdate.image,
+      addresses: userToUpdate.addresses
     });
   }
 }
