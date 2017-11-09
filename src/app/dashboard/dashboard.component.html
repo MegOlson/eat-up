@@ -26,7 +26,7 @@
           <div *ngFor="let favorite of currentUser.favorites | slice:1">
             <div class="col-md-2">
               <h5>{{favorite}}</h5>
-              <button type="button" (click)="removeItem(currentUser, favorite)" class="btn" name="button">Remove</button>
+              <button type="button" (click)="removeItem(currentUser, favorite, address)" class="btn" name="button">Remove</button>
             </div>
           </div>
         </div>

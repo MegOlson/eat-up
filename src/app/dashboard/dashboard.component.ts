@@ -29,8 +29,11 @@ export class DashboardComponent implements OnInit {
     this.fullImagePath = "../../assets/images/user.png";
   }
 
-  removeItem(userToUpdate, favoriteToDelete) {
-    userToUpdate.favorites.splice(favoriteToDelete, 1);
+  removeItem(userToUpdate, favoriteToDelete, addressToDelete) {
+    let index = userToUpdate.favorites.indexOf(favoriteToDelete);
+    let addressIndex = userToUpdate.addresses.indexOf(addressToDelete);
+    userToUpdate.favorites.splice(index, 1);
+    userToUpdate.addresses.splice(addressIndex, 1);
     this.userAuthService.updateUserInDatabase(userToUpdate);
   }
 
