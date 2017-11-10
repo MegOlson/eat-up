@@ -1,6 +1,7 @@
 .sebm-google-map-container {
   height: 800px;
   width: 1000px;
+  color: black;
 }
 
 .name {
@@ -23,7 +24,7 @@
 
 .resultsPage {
   margin-right: 20%;
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
   color: white;
 }
 
