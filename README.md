@@ -2,7 +2,21 @@
 
 ## Description
 
-An Angular 2 Web Application that allows users to create an account and search for restaurants by cuisine type within a specified city. User's can save restaurants as favorite's.
+An Angular 2 Web Application that allows users to create an account and search for restaurants by cuisine type within a specified city.
+
+User's can....
+
+Sign In or create an new account
+
+Sign in with account information or Google
+
+Once signed in you can go to your dashboard, search for restaurants, or log out
+
+While on the search page you search by food type and city
+
+And a map and list of 20 restaurants be generated. By clicking the Love it button you will add the restaurant to your dashboard
+
+While in your dashboard you can upload a photo from your personal computer and remove restaurants from your list.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
@@ -10,12 +24,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * Clone Repository named _eat-up_
 * Create a database using Firebase and import json named _sample-users.json_
-* Use your own personal api-keys file recieved from Firebase.
 * Run the following commands in terminal:
   * `$ npm install`
   * `$ bower install`
   * `$ ng build`
   * `$ ng serve`
+* Visit [Firebase](https://firebase.google.com)
+* Log in with Google credentials.
+* Click get started button.
+* Click Add Project button.
+* In project name field enter ```eat-up```
+* Click create project button.
+* In terminal, in root directory, enter ```touch src/app/api-keys.ts```
+* Open project with text editor of choice
+* Back to the firebase page, click "Add firebase to your web app". A pop-up modal should appear on your screen.
+* In your newly created api-keys.ts file add the following from the modal:
+```
+export var masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+```
 
 ## Development server
 
