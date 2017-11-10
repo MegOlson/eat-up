@@ -17,8 +17,8 @@ import * as firebase from "firebase/app";
 })
 export class AppComponent {
   user;
-  private isLoggedIn: Boolean;
-  private userName: String;
+  public isLoggedIn: Boolean;
+  public userName: String;
 
   constructor(public authService: UserAuthService, private router: Router) {
     this.authService.user.subscribe(user => {
@@ -31,7 +31,13 @@ export class AppComponent {
     });
 
     this.router.events.subscribe((event: any) => {
-      document.body.classList.remove("signup-page", "login-page", "dashboard-page", "welcome-page", "search-page");
+      document.body.classList.remove(
+        "signup-page",
+        "login-page",
+        "dashboard-page",
+        "welcome-page",
+        "search-page"
+      );
 
       if (event.url.startsWith("/signup")) {
         document.body.classList.add("signup-page");
