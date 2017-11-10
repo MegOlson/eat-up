@@ -2,21 +2,40 @@
 
 ## Description
 
+![eat_up](https://user-images.githubusercontent.com/20192033/32675447-ce480fec-c60b-11e7-8414-ad99d7759453.png)
+
 An Angular 2 Web Application that allows users to create an account and search for restaurants by cuisine type within a specified city.
 
 User's can....
 
 Sign In or create an new account
 
+![signin_new_account](https://user-images.githubusercontent.com/20192033/32675475-df4f977e-c60b-11e7-9346-ae359214bfd1.png)
+
+![new_account_screenshot](https://user-images.githubusercontent.com/20192033/32675462-d7089ebc-c60b-11e7-8159-8222b8c38e83.png)
+
 Sign in with account information or Google
+
+![login_screen_shot](https://user-images.githubusercontent.com/20192033/32675582-321d32f4-c60c-11e7-806a-7bf0a317bfc7.png)
 
 Once signed in you can go to your dashboard, search for restaurants, or log out
 
+![once_logged_in](https://user-images.githubusercontent.com/20192033/32675722-c93db4b0-c60c-11e7-8fe7-596fc17f1ab0.png)
+
 While on the search page you search by food type and city
 
-And a map and list of 20 restaurants be generated. By clicking the Love it button you will add the restaurant to your dashboard
+![sreach_screenshot](https://user-images.githubusercontent.com/20192033/32675478-e20656e2-c60b-11e7-946c-9a1fcf86a34b.png)
+
+And a map and list of 20 restaurants be generated. By clicking the ```Love it``` button you will add the restaurant to your dashboard
+
+![map_screenshot](https://user-images.githubusercontent.com/20192033/32675461-d6dff494-c60b-11e7-8ed5-99dfec8f0ea1.png)
+
 
 While in your dashboard you can upload a photo from your personal computer and remove restaurants from your list.
+
+![add_photo_screenshot](https://user-images.githubusercontent.com/20192033/32675445-ce16ccde-c60b-11e7-973c-44126e9915f5.png)
+
+![dashboard_screenshot](https://user-images.githubusercontent.com/20192033/32675446-ce303548-c60b-11e7-9076-b08f5244267e.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
@@ -57,14 +76,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## User Stories
-
-* User can create an account with a username and email.
-* User can search for restaurants by cuisine type within a specified city and receive a list of 20 restaurants.
-* User can view and interact with each restaurant on google map simulator.
-* User can choose to save a restaurant to their favorite's list.
-* User can view a list of their favorited restaurants.
-
 ## Technologies Used
 
 * _HTML_
@@ -82,7 +93,7 @@ No known bugs
 
 ## Support and contact details
 
-_Feel free to contact Megan at meganannetteolson@yahoo.com, Kristen at kristen.m.kulha@gmail.com, Elrey at elbelmonti@gmail.com, and Linda at SOMETHING_
+_Feel free to contact Megan at meganannetteolson@yahoo.com, Kristen at kristen.m.kulha@gmail.com, Elrey at elbelmonti@gmail.com, and Linda at linda.luu1226@gmail.com_
 
 ## Further help
 
