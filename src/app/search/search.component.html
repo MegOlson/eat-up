@@ -1,5 +1,6 @@
 <div class="searchPage">
-  <h2>Restaurant Finder:</h2><hr>
+  <h2>Restaurant Finder:</h2>
+  <hr>
 
   <form class="search form-inline">
     <div class="row">
@@ -13,6 +14,7 @@
       </div>
     </div>
   </form>
+  <div *ngIf="searchError" class="text-danger">{{searchError}}</div>
   <div class="button">
     <button type="button" class="btn-lg" (click)="getRestaurants(newCity.value, newFood.value)" name="button">Search</button>
   </div>
