@@ -27,9 +27,17 @@ form {
 }
 
 .searchPage {
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
 }
 
 h4 {
   color: white;
+}
+
+.text-danger {
+  text-align: center;
+  color: #ffa6a4;
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin-top: 9px;
 }
