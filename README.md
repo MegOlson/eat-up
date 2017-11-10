@@ -76,14 +76,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## User Stories
-
-* User can create an account with a username and email.
-* User can search for restaurants by cuisine type within a specified city and receive a list of 20 restaurants.
-* User can view and interact with each restaurant on google map simulator.
-* User can choose to save a restaurant to their favorite's list.
-* User can view a list of their favorited restaurants.
-
 ## Technologies Used
 
 * _HTML_
