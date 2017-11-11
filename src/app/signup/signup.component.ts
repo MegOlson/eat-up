@@ -43,16 +43,15 @@ export class SignupComponent implements OnInit {
     password: string,
     confirmPassword: string
   ) {
+    // this.signupAnyError =;
     if (!this.checkEmail(email)) {
       this.emailError = "Invalid Email!";
     } else if (!this.checkPassword(password, confirmPassword)) {
       this.passwordError = "Passwords do not match!";
     } else {
       this.authService.createUser(email, password, firstName, lastName);
-      if (this.signupAnyError) {
-        return this.signupAnyError;
-      } else {
-        this.router.navigate([""]);
+      if (!this.signupAnyError()) {
+        this.router.navigate(["login"]);
       }
     }
   }

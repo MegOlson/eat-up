@@ -46,6 +46,7 @@ export class UserAuthService {
     firstName: string,
     lastName: string
   ) {
+    this.createUserError = "";
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)

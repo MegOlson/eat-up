@@ -4,18 +4,18 @@
 
   <form class="search form-inline">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-4 col-md-offset-2">
         <h4>Where are you?</h4>
         <input type="text" #newCity required class="form-control" placeholder="ex: Seattle">
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4 col-md-offset-1">
         <h4>What sounds good?</h4>
         <input type="text" #newFood class="form-control" required placeholder="ex: Waffles">
       </div>
     </div>
   </form>
   <div *ngIf="searchError" class="text-danger">{{searchError}}</div>
-  <div class="button">
+  <div class="text-center">
     <button type="button" class="btn-lg" (click)="getRestaurants(newCity.value, newFood.value)" name="button">Search</button>
   </div>
 

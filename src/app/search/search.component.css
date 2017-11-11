@@ -1,13 +1,7 @@
 .btn-lg {
   background-color: rgb(118, 190, 142);
   color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.button {
-  margin-right: 45%;
-  margin-left: 46%;
+  margin: 20px 30px 20px 0px;
 }
 
 h2 {
@@ -20,10 +14,6 @@ form {
   margin-right: auto;
   margin-left: auto;
   width: 70%;
-}
-
-.col-md-5 {
-  float: right;
 }
 
 .searchPage {
