@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
+import { googleApiKey } from "./api-keys";
 
 @Injectable()
 export class GooglePlacesService {
@@ -12,7 +13,8 @@ export class GooglePlacesService {
         foodType +
         "+in+" +
         city +
-        "&key=AIzaSyDGSdrAlnmRxGQwhSe5y3oxUp5lxQr2s_I"
+        "&key=" +
+        googleApiKey
     );
   }
 }
