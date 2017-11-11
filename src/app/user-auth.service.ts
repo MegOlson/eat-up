@@ -112,7 +112,7 @@ export class UserAuthService {
     });
   }
 
-  returnErrors(){
+  returnCreateErrors() {
     return this.createUserError;
   }
 }
